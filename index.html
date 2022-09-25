@@ -17,128 +17,167 @@
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
       body {
         background-color: hsl(30, 38%, 92%);
-      }
-      * {
-        font-family: "Fraunces", serif;
+        font-size: 14px;
         font-family: "Montserrat", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0 1.5rem;
       }
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
+      h2 {
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        font-weight: 500;
         color: hsl(228, 12%, 48%);
+        margin-bottom: 1rem;
+        letter-spacing: 0.2rem;
+      }
+      h1 {
+        font-size: 2rem;
+        color: hsl(212, 21%, 14%);
+        font-family: "Fraunces", serif;
+      }
+      img {
+        max-width: 100%;
+      }
+      p {
+        color: hsl(228, 12%, 48%);
+        line-height: 1.8;
       }
       .container {
+        max-width: 600px;
+      }
+      .container h1 {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+      }
+      .container p {
+        margin-bottom: 2rem;
+      }
+      .container ul {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+      .container ul li:first-child {
+        font-size: 2rem;
+        margin-right: 1.5rem;
+      }
+      .container ul li:nth-child(2) {
+        color: hsl(228, 12%, 48%);
+      }
+      .container article:first-child img {
+        border-radius: 1rem 1rem 0 0;
+      }
+      .container article:last-child {
         background-color: hsl(0, 0%, 100%);
-        width: 40%;
-        margin: auto;
-        margin-top: 10%;
+        padding: 1.5rem;
+        border-radius: 0 0 1rem 1rem;
+        margin-top: -1rem;
+      }
+      .container .btn {
+        background-color: hsl(158, 36%, 37%);
+        color: hsl(0, 0%, 100%);
+        font-weight: 700;
+        font-size: 1rem;
+        padding: 1rem 2rem;
+        border-radius: 0.625rem;
+        width: 100%;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transform: 0.3s;
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 10px;
-        overflow: hidden;
       }
-      .perfume {
-        height: 600px;
-        width: 50%;
+      .container .btn:hover {
+        background-color: hsl(158, 38%, 20%);
       }
-      .image {
-        height: 100%;
-        /* border-radius: 5px; */
+      .container .btn img {
+        margin-right: 0.5rem;
       }
-
-      .text-box {
-        margin-left: 50px;
-        margin-right: 40px;
+      button,
+      li {
+        font-family: inherit;
       }
-      .text-box div {
-        margin-bottom: 30px;
-        margin-top: 30px;
-      }
-      .item-name {
-        font-size: 1.3rem;
-        font-weight: 700;
-        letter-spacing: 2px;
-        color: hsl(228, 12%, 48%);
-      }
-      .text-box h1 {
-        font-size: 40px;
-      }
-      .para {
-        color: hsl(228, 12%, 48%);
-        line-height: 27px;
-        font-size: 18px;
-        letter-spacing: 1px;
-      }
-
-      .now {
-        font-size: 25px;
-        font-weight: 900;
-        color: hsl(158, 36%, 37%);
-        margin-right: 30px;
-      }
-      .then {
-        color: hsl(228, 12%, 48%);
+      ul {
+        list-style-type: none;
       }
       .price {
-        display: flex;
-        align-items: center;
+        font-family: "Fraunces", serif;
+        color: hsl(158, 36%, 37%);
       }
-      .button {
+      .attribution {
+        font-size: 14px;
         text-align: center;
+        margin-top: 2rem;
       }
-      .buy {
-        font-size: 15px;
-        font-weight: 500;
-        color: hsl(0, 0%, 100%);
-        padding: 0px 85px;
-        height: 50px;
-        background-color: hsl(158, 49%, 17%);
-        border: none;
-        border-radius: 5px;
+      .attribution a {
+        color: hsl(228, 45%, 44%);
       }
-      .icon {
-        /* margin-left: 0; */
-        padding-right: 10px;
-        /* padding-left: 30px; */
-        float: left;
-      }
-      @media (max-width: 480) {
-        .perfume img {
-          background-image: url("./images/image-product-mobile.jpg");
+
+      @media (min-width: 640px) {
+        picture img {
+          height: 100%;
+        }
+        .container {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .container article:first-child img {
+          border-radius: 0.625rem 0 0 0.625rem;
+          width: 100%;
+        }
+        .container article:last-child {
+          border-radius: 0 0.625rem 0.625rem 0;
+          margin-top: 0;
+        }
+        .container p {
+          margin-bottom: 1rem;
         }
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="perfume">
-        <img class="image" src="./images/image-product-desktop.jpg" />
-      </div>
-      <div class="text-box">
-        <div><span class="item-name">Perfume</span></div>
+      <article>
+        <picture class="perfume">
+          <source
+            media="(min-width: 640px)"
+            srcset="./images/image-product-desktop.jpg"
+          />
+          <img src="./images/image-product-mobile.jpg" />
+        </picture>
+      </article>
+      <article class="text-box">
+        <h2>Perfume</h2>
 
-        <div><h1>Gabrielle Essence Eau De Parfum</h1></div>
-        <div>
-          <p class="para">
-            A floral, solar and voluptuous interpretation composed by Olivier
-            Polge, Perfumer-Creator for the House of CHANEL.
-          </p>
-        </div>
-        <div class="price">
-          <span class="now">$149.99</span> <del class="then">$169.99</del>
-        </div>
-        <div class="button">
-          <button class="buy">
-            <img class="icon" src="./images/icon-cart.svg" />
-            Add to Cart
-          </button>
-        </div>
-      </div>
+        <h1>Gabrielle Essence Eau De Parfum</h1>
+
+        <p class="para">
+          A floral, solar and voluptuous interpretation composed by Olivier
+          Polge, Perfumer-Creator for the House of CHANEL.
+        </p>
+
+        <ul>
+          <li class="price">$149.99</li>
+          <li><s>$169.99</s></li>
+        </ul>
+
+        <button class="btn">
+          <img src="./images/icon-cart.svg" /> Add to Cart
+        </button>
+      </article>
     </div>
 
     <div class="attribution">
